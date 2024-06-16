@@ -100,14 +100,11 @@ int main() {
             future_multiply.get();
         });
 
-        double theoretical_speedup = 1.5 / (0.05 + (0.95 / threads));
         double empirical_speedup = static_cast<double>(sequential_time) / parallel_time;
 
         std::cout << "Threads: " << threads << std::endl;
         std::cout << "Parallel multiplication time: " << parallel_time << " microseconds" << std::endl;
-        std::cout << "Theoretical speedup: " << theoretical_speedup << std::endl;
         std::cout << "Empirical speedup: " << empirical_speedup << std::endl;
-        std::cout << "Difference (Theoretical - Empirical): " << (theoretical_speedup - empirical_speedup) << std::endl;
         std::cout << "-----------" << std::endl;
     }
 
